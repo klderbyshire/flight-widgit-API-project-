@@ -22,10 +22,10 @@ const populateTable = (flights) => {
 
     const flightDetails = {
       time: flight.departing.slice(0, 5),
-      destination: flight.destination.toUppercase(),
+      destination: flight.destination.toUpperCase(),
       flight: flight.flightNumber.shift(),
       gate: flight.gate,
-      remarks: flight.status.toUppercase(),
+      remarks: flight.status.toUpperCase(),
     };
 
     for (const flightDetail in flightDetails) {
