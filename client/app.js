@@ -31,14 +31,16 @@ const populateTable = (flights) => {
     for (const flightDetail in flightDetails) {
       const tableCell = document.createElement("td");
       const word = Array.from(flightDetails[flightDetail]);
-      console.log(flightDetail)
+      console.log(flightDetail);
 
       for (const [index, letter] of word.entries()) {
         const letterElement = document.createElement("div");
 
-        letterElement.textContent = letter;
-
-        tableCell.append(letterElement);
+        setTimeout(() => {
+          letterElement.textContent = letter;
+          letterElement.classList.add("flip");
+          tableCell.append(letterElement);
+        }, 100 * index);
       }
       tableRow.append(tableCell);
     }
